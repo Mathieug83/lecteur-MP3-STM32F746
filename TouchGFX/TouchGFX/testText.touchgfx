@@ -1,0 +1,232 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Name": "Main",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "fondCouleur",
+            "Width": 480,
+            "Height": 272,
+            "LockPosition": true,
+            "Color": {
+              "Red": 120,
+              "Green": 160,
+              "Blue": 182
+            }
+          },
+          {
+            "Type": "Image",
+            "Name": "FondMotif",
+            "Width": 480,
+            "Height": 272,
+            "LockPosition": true,
+            "RelativeFilename": "final_background_480x272.png",
+            "Alpha": 179
+          },
+          {
+            "Type": "TextArea",
+            "Name": "touchgfxTxt",
+            "X": 138,
+            "Y": 180,
+            "Width": 205,
+            "Height": 20,
+            "TextId": "Touchgfx_text",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 9
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tickTxt",
+            "X": 138,
+            "Y": 200,
+            "Width": 205,
+            "Height": 20,
+            "TextId": "Tick_counter",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 5
+            }
+          },
+          {
+            "Type": "Button",
+            "Name": "playPauseButton",
+            "X": 215,
+            "Y": 222,
+            "Width": 50,
+            "Height": 50,
+            "Pressed": "play_icon.png",
+            "Released": "play_icon.png"
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "previousButton",
+            "X": 179,
+            "Y": 229,
+            "Width": 36,
+            "Height": 36,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_fill_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_outline_disabled.png",
+            "IconPressed": "__generated\\icon_theme_images_av_skip_previous_50_50_E8F6FB.svg.png",
+            "IconReleased": "__generated\\icon_theme_images_av_skip_previous_50_50_E8F6FB.svg.png",
+            "IconX": -7,
+            "IconY": -7,
+            "IconHeight": 50,
+            "IconWidth": 50
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "nextButton",
+            "X": 265,
+            "Y": 229,
+            "Width": 36,
+            "Height": 36,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_fill_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_outline_disabled.png",
+            "IconPressed": "__generated\\icon_theme_images_av_skip_next_50_50_E8F6FB.svg.png",
+            "IconReleased": "__generated\\icon_theme_images_av_skip_next_50_50_E8F6FB.svg.png",
+            "IconX": -7,
+            "IconY": -7,
+            "IconHeight": 50,
+            "IconWidth": 50
+          },
+          {
+            "Type": "Slider",
+            "Name": "progression",
+            "X": 90,
+            "Y": 220,
+            "Width": 301,
+            "Height": 5,
+            "IsHorizontalSlider": true,
+            "BackgroundUnselected": "__generated\\alternate_theme_images_widgets_slider_horizontal_thin_track_medium.png",
+            "BackgroundSelected": "__generated\\alternate_theme_images_widgets_slider_horizontal_thin_filler_medium.png",
+            "Indicator": "transparent.png",
+            "IndicatorMax": 300,
+            "ValueMax": 100
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "Width": 411,
+            "Height": 17,
+            "TextId": "ResourceId1",
+            "TextRotation": "0",
+            "Alpha": 0,
+            "AutoSize": true
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "InteractionPlayPause",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "playPauseButton"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "functionPlayPauseButton"
+            }
+          },
+          {
+            "InteractionName": "InteractionPrevious",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "previousButton"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "functionPreviousButton"
+            }
+          },
+          {
+            "InteractionName": "InteractionNextButton",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "nextButton"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "functionNextButton"
+            }
+          }
+        ]
+      }
+    ],
+    "CustomContainerDefinitions": [],
+    "Name": "testText",
+    "Resolution": {
+      "Width": 480,
+      "Height": 272
+    },
+    "SelectedColorDepth": 16,
+    "StartupScreenName": "Main",
+    "SelectedStartupLanguage": "GB",
+    "TouchGfxPath": "../Middlewares/ST/touchgfx",
+    "UIPath": ".",
+    "AvailableColorDepths": [
+      16
+    ],
+    "AvailableLCDs": {
+      "16": "LCD16bpp"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [
+      {
+        "Width": 480,
+        "Height": 272
+      }
+    ],
+    "PhysicalButtons": [],
+    "FrameworkFeatures": {
+      "LCD16bpp": {
+        "Id": "LCD16bpp",
+        "IsEnabled": true
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "PostGenerateTargetCommand": "touchgfx update_project",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "CompileTargetCommand": "make -f ../gcc/Makefile -j8",
+    "FlashTargetCommand": "make -f ../gcc/Makefile flash -j8",
+    "FlashTargetIntCommandOverride": "make -f ../gcc/Makefile intflash -j8",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Landscape",
+    "Family": "STM32F7",
+    "SubFamily": "STM32F7x6",
+    "Toolchain": "STM32CubeIDE",
+    "Platform": "m7",
+    "ProjectFile": "../STM32F746G_DISCO.ioc",
+    "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
+    "OptionalComponents": [],
+    "AdditionalFeatures": [
+      "CWRVector",
+      "VectorFonts",
+      "Video"
+    ]
+  },
+  "Version": "4.25.0",
+  "CreatedBy": "4.25.0"
+}
